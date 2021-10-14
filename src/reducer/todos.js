@@ -1,5 +1,5 @@
 import {ADD_TODO,TOGGLE_TODO} from '../action'
-let id=1
+import { v4 as uuidv4 } from 'uuid';
 const todo=(state=[],action)=>{
     // console.log(action,"action")
     switch(action.type){
@@ -8,7 +8,7 @@ const todo=(state=[],action)=>{
                 ...state,
                {
                    text:action.payload,
-                   id:++id,
+                   id:uuidv4(),
                    completed:false
                }
            ]
