@@ -1,4 +1,4 @@
-import {ADD_TODO} from '../action'
+import {ADD_TODO,TOGGLE_TODO} from '../action'
 let id=1
 const todo=(state=[],action)=>{
     // console.log(action,"action")
@@ -12,6 +12,12 @@ const todo=(state=[],action)=>{
                    completed:false
                }
            ]
+        case TOGGLE_TODO:
+            console.log(action.payload)
+            return state.map(item=>{
+                if(item.id===action.payload) item.completed=true
+                return item
+            });    
         default:
             return state
     }

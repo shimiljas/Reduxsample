@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect } from 'react-redux'
+import {ToggleTodo} from '../action'
 class TodoList extends Component{
     render(){
         console.log(this.props.todos)
@@ -9,7 +10,7 @@ class TodoList extends Component{
                 {this.props.todos.map(item=>(
                     <div key={item.id}>
                      <li >{item.text}</li>
-                     {!item.completed? <button>Complete</button>:null}
+                     {!item.completed? <button onClick={()=>this.props.ToggleTodo(item.id)}>Complete</button>:null}
                     </div>
                 ))}
             </ul>
@@ -25,4 +26,4 @@ const mapStateToProps=(state)=>{
     }
 }
 
-export default connect(mapStateToProps,null)(TodoList)
+export default connect(mapStateToProps,{ToggleTodo})(TodoList)
