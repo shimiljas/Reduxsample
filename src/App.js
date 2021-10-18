@@ -2,7 +2,8 @@ import React from 'react'
 import {Provider} from 'react-redux'
 import configureStore from './store'
 import { PersistGate } from 'redux-persist/integration/react'
-import Todo from './Todo'
+import Todo from './screen/Todo'
+import Post from './screen/Post'
 function App() {
   const store=configureStore()
   console.log(store,"todo")
@@ -10,7 +11,7 @@ function App() {
      <Provider store={store.store}>
         <PersistGate loading={null} persistor={store.persistor}>
         <div className="App">
-          <Todo/>
+          <Post/>
         </div>
       </PersistGate>
      </Provider>

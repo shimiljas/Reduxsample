@@ -19,7 +19,8 @@ class TodoList extends Component{
         )
     }
 }
-
+//useDispatch==mapDispacthToProps
+//useSelector==mapStateToProps
 const mapStateToProps=(state)=>{
     return{
         todos:state.todos

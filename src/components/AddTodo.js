@@ -31,11 +31,15 @@ class AddTodo extends Component{
         )
     }
 }
-
+//useDispatch === mapDispatchToProps
 // const mapDispatchToProps=(dispatch)=>{
 //     return{
 //         addTodo:(text)=>dispatch(addTodo(text))
 //     }
 // }
+
+
+
+
 
 export default connect(null,{addTodo})(AddTodo)
