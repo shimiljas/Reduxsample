@@ -1,6 +1,6 @@
 import React, { Component,useState } from 'react'
 import {connect} from 'react-redux'
-import {createpost} from '../action'
+import {createpost,clearAll} from '../action'
 import { useDispatch } from 'react-redux'
 
 const AddPost=()=>{
@@ -8,6 +8,10 @@ const AddPost=()=>{
     const [post,setPost]=useState('')
     const callPostApi=()=>{
         dispatch(createpost(post))
+        setPost('')
+    }
+    const clearall=()=>{
+        dispatch(clearAll());
     }
    
    return(
@@ -18,6 +22,9 @@ const AddPost=()=>{
              onChange={e=>setPost(e.target.value)}
            />
            <button onClick={callPostApi}>post</button>
+
+
+           <button onClick={clearall}>Clear All</button>
        </div>
    )
 }

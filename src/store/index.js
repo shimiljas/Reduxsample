@@ -17,7 +17,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducer)
 //composeWithDevTools(applyMiddleware(logger))
 export default () => {
-    let store = createStore(persistedReducer,applyMiddleware(logger,thunk))
+    let store = createStore(persistedReducer,applyMiddleware(thunk,logger))
     let persistor = persistStore(store)
     return { store, persistor }
   }

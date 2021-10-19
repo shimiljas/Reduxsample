@@ -4,6 +4,13 @@ import configureStore from './store'
 import { PersistGate } from 'redux-persist/integration/react'
 import Todo from './screen/Todo'
 import Post from './screen/Post'
+import PostDetail from './screen/PostDetail'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
   const store=configureStore()
   console.log(store,"todo")
@@ -11,7 +18,12 @@ function App() {
      <Provider store={store.store}>
         <PersistGate loading={null} persistor={store.persistor}>
         <div className="App">
-          <Post/>
+        <Router>
+         <Switch>
+          <Route exact path="/"  component={Post}/>
+           <Route path="/post/:id"  component={PostDetail}/>
+          </Switch>
+        </Router>
         </div>
       </PersistGate>
      </Provider>
