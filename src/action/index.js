@@ -1,3 +1,6 @@
+
+import { createAction } from 'redux-actions';
+
 export const ADD_TODO='ADD_TODO'
 export const TOGGLE_TODO='TOGGLE_TODO'
 export const CLEAR_TODO='CLEAR_TODO'
@@ -14,7 +17,7 @@ export const POST_LIST_FAILURE='POST_LIST_FAILURE'
 export const DELETE_POST='DELETE_POST'
 
 export const CLEAR_ALL='CLEAR_ALL'
-
+export const POST_ID='POST_ID'
 
 
 
@@ -94,3 +97,18 @@ export const clearAll=()=>{
         type:CLEAR_ALL
     }
 }
+
+
+
+
+export const postId = createAction(POST_ID);
+
+// postId() {type:'POST_ID'}
+// postId(10) {type:'POST_ID',payload:10}
+// postId([10,11,12]){type:'POST_ID',payload:[10,11,12]}
+// export const postId=(id)=>{
+//     return{
+//         type:POST_ID,
+//         payload:id
+//     }
+// }
