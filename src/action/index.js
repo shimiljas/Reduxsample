@@ -19,6 +19,9 @@ export const DELETE_POST='DELETE_POST'
 export const CLEAR_ALL='CLEAR_ALL'
 export const POST_ID='POST_ID'
 
+export const POST_DETAIL_SUCCESS='POST_DETAIL_SUCCESS'
+export const POST_DETAIL_FAILURE='POST_DETAIL_FAILURE'
+
 
 
 

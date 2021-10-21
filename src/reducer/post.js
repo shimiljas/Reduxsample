@@ -4,10 +4,12 @@ import {
     POST_LIST_FAILURE,
     POST_SUCCESS,
     DELETE_POST,
-    CLEAR_ALL
+    CLEAR_ALL,
+    POST_DETAIL_SUCCESS,
+    POST_DETAIL_FAILURE
 } from '../action'
  
-const intialState={loader:false,post:[]}
+const intialState={loader:false,post:[],postdetail:null}
 const post=(state=intialState,action)=>{
     switch(action.type){
         case POST_LIST_REQUEST:
@@ -29,7 +31,12 @@ const post=(state=intialState,action)=>{
                 post:state.post.filter(item=>item.id!=action.payload)
             }  
         case CLEAR_ALL:
-            return intialState      
+            return intialState    
+            
+        case POST_DETAIL_SUCCESS:
+            return {...state,postdetail:action.payload}  
+        case POST_DETAIL_FAILURE:
+            return {...state,postdetail:null}      
 
        default:
            return state;    
