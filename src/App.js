@@ -11,23 +11,27 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import UseReducer from './screen/UseReducer'
 function App() {
-  const store=configureStore()
-  console.log(store,"todo")
-  return (
-     <Provider store={store.store}>
-        <PersistGate loading={null} persistor={store.persistor}>
-        <div className="App">
-        <Router>
-         <Switch>
-          <Route exact path="/"  component={Post}/>
-           <Route path="/post/:id"  component={PostDetail}/>
-          </Switch>
-        </Router>
-        </div>
-      </PersistGate>
-     </Provider>
-  );
+  return(
+    <UseReducer/>
+  )
+  // const store=configureStore()
+  // console.log(store,"todo")
+  // return (
+  //    <Provider store={store.store}>
+  //       <PersistGate loading={null} persistor={store.persistor}>
+  //       <div className="App">
+  //       <Router>
+  //        <Switch>
+  //         <Route exact path="/"  component={Post}/>
+  //          <Route path="/post/:id"  component={PostDetail}/>
+  //         </Switch>
+  //       </Router>
+  //       </div>
+  //     </PersistGate>
+  //    </Provider>
+  // );
 }
 
 export default App;
