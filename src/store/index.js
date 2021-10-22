@@ -10,6 +10,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from '../saga'
 
+// const storage = createSensitiveStorage({
+//     keychainService: "myKeychain",
+//     sharedPreferencesName: "mySharedPrefs"
+//   });
+
 const persistConfig = {
     key: 'root',
     storage,
